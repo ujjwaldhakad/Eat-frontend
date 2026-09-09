@@ -14,7 +14,7 @@ gsap.registerPlugin(SplitText);
 
 const Navbar = () => {
 
-    //open menu for responsive 
+    //open menu for responsive  
     const [menuOpen, setMenuOpen] = useState(false);
 
 
@@ -85,7 +85,7 @@ const Navbar = () => {
 
             {/* navbar  */}
             <nav className='navbar'>
-                <h1 className='n-title'>EAT<span className='title-dot'>.</span></h1>
+                <Link href="/" className='n-title'>EAT<span className='title-dot'>.</span></Link>
                 <button
                     className="menu-btn"
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -97,7 +97,7 @@ const Navbar = () => {
                 <div className={`nav-links ${menuOpen ? "show" : ""}`}>
                     <Link href="#" className='nav-item'><ShoppingBag /></Link>
                     <Link href="#" className='nav-item'><Wishlist /></Link>
-                    <Link href="#" className='nav-item'>Restaurant</Link>
+                    <Link href="restaurant" className='nav-item'>Restaurant</Link>
                     <Link href="#" className='nav-item'>Contact</Link>
                     <Link href="#" className='nav-item'>Address</Link>
                     <Link href="#" className='nav-item'>Login</Link>
