@@ -189,8 +189,8 @@ const Page = () => {
 
             {/* book your table Modal */}
             {openBox && (
-                <div 
-                    className="rest-book-table" 
+                <div
+                    className="rest-book-table"
                     onClick={(e) => {
                         if (e.target === e.currentTarget) handleCloseModal();
                     }}
@@ -409,16 +409,16 @@ const Page = () => {
                                 </div>
 
                                 <div className="rest-success-actions">
-                                    <button 
-                                        type="button" 
-                                        className="rest-btn-cancel" 
+                                    <button
+                                        type="button"
+                                        className="rest-btn-cancel"
                                         onClick={() => setIsSubmitted(false)}
                                     >
                                         Edit / Book Another
                                     </button>
-                                    <button 
-                                        type="button" 
-                                        className="rest-btn-confirm" 
+                                    <button
+                                        type="button"
+                                        className="rest-btn-confirm"
                                         onClick={handleCloseModal}
                                     >
                                         Done
@@ -445,7 +445,7 @@ const Page = () => {
 
                     <div className={`nav-links ${menuOpen ? "show" : ""}`}>
                         <Link href="#" className='nav-item'>Specialties</Link>
-                        <Link href="#" className='nav-item'>Menu</Link>
+                        <Link href="restaurant/menu" className='nav-item'>Menu</Link>
                         <Link href="restaurant" className='nav-item'>Our Story</Link>
                         <Link href="#" className='nav-item'>Visit Us</Link>
                         <button onClick={() => setOpenBox(true)} className='rest-btn'>Book a Table</button>
