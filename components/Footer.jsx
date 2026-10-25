@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Footer = () => {
     return (
@@ -10,19 +11,20 @@ const Footer = () => {
                 </div>
                 <ul className='f-section2'>
                     <h3 className='f-sections-title'>Boxes</h3>
-                    <li id='item'>This week's box</li>
-                    <li id='item'>Build your own</li>
-                    <li id='item'>Gift a box</li>
+                    <li id='item'><Link href="/boxes" style={{ color: 'inherit' }}>This week's box</Link></li>
+                    <li id='item'><Link href="/boxes" style={{ color: 'inherit' }}>Build your own</Link></li>
+                    <li id='item'><Link href="/boxes" style={{ color: 'inherit' }}>Gift a box</Link></li>
                 </ul>
                 <ul className='f-section3'>
                     <h3 className='f-sections-title'>Our growers</h3>
-                    <li id='item'>Recipes</li>
-                    <li id='item'>Careers</li>
+                    <li id='item'><Link href="/recipes" style={{ color: 'inherit' }}>Recipes</Link></li>
+                    <li id='item'><Link href="/careers" style={{ color: 'inherit' }}>Careers</Link></li>
                 </ul>
                 <ul className='f-section4'>
                     <h3 className='f-sections-title'>FAQ</h3>
-                    <li id='item'>Manage subscription</li>
-                    <li id='item'>Contact</li>
+                    <li id='item'><Link href="/subscription" style={{ color: 'inherit' }}>Manage subscription</Link></li>
+                    <li id='item'><Link href="/faq" style={{ color: 'inherit' }}>FAQ</Link></li>
+                    <li id='item'><Link href="/contact" style={{ color: 'inherit' }}>Contact</Link></li>
                 </ul>
             </div>
             <hr className='f-hr'></hr>

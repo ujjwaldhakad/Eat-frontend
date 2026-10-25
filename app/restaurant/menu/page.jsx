@@ -28,11 +28,11 @@ const page = () => {
 
 
                     <div className={`nav-links ${menuOpen ? "show" : ""}`}>
-                        <Link href="#" className='nav-item'>Specialties</Link>
-                        <Link href="restaurant/menu" className='nav-item'>Menu</Link>
-                        <Link href="restaurant" className='nav-item'>Our Story</Link>
-                        <Link href="#" className='nav-item'>Visit Us</Link>
-                        <button onClick={() => setOpenBox(true)} className='rest-btn'>Book a Table</button>
+                        <Link href="/restaurant#specialties" className='nav-item'>Specialties</Link>
+                        <Link href="/restaurant/menu" className='nav-item'>Menu</Link>
+                        <Link href="/restaurant/story" className='nav-item'>Our Story</Link>
+                        <Link href="/restaurant/visit" className='nav-item'>Visit Us</Link>
+                        <Link href="/restaurant" className='rest-btn'>Book a Table</Link>
                     </div>
                 </nav>
 

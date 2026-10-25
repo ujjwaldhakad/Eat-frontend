@@ -95,12 +95,12 @@ const Navbar = () => {
 
 
                 <div className={`nav-links ${menuOpen ? "show" : ""}`}>
-                    <Link href="#" className='nav-item'><ShoppingBag /></Link>
-                    <Link href="#" className='nav-item'><Wishlist /></Link>
-                    <Link href="restaurant" className='nav-item'>Restaurant</Link>
-                    <Link href="#" className='nav-item'>Contact</Link>
-                    <Link href="#" className='nav-item'>Address</Link>
-                    <Link href="#" className='nav-item'>Login</Link>
+                    <Link href="/cart" className='nav-item'><ShoppingBag /></Link>
+                    <Link href="/wishlist" className='nav-item'><Wishlist /></Link>
+                    <Link href="/restaurant" className='nav-item'>Restaurant</Link>
+                    <Link href="/contact" className='nav-item'>Contact</Link>
+                    <Link href="/address" className='nav-item'>Address</Link>
+                    <Link href="/login" className='nav-item'>Login</Link>
                 </div>
             </nav>
 

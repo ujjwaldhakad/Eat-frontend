@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { Tick } from '@/components/Icons'
 import Footer from '@/components/Footer'
@@ -209,7 +210,7 @@ const page = () => {
                   </div>
                 ))}
 
-                <button className="s3-card-btn">{i.buttonText}</button>
+                <Link href="/cart" className="s3-card-btn">{i.buttonText}</Link>
               </div>
             );
           })}
