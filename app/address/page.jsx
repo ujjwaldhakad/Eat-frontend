@@ -78,10 +78,10 @@ const AddressPage = () => {
             <BasicNavbar active="address" />
 
             <main className="basic-container">
-                <div className="basic-page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                <div className="basic-page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem' }}>
                     <div>
-                        <h1 className="basic-page-title">Delivery Addresses</h1>
-                        <p className="basic-page-desc">Manage your delivery locations for morning box drop-offs.</p>
+                        <h1 className="basic-page-title">Delivery Locations</h1>
+                        <p className="basic-page-desc">Where should our cold-chain drivers leave your morning harvest box?</p>
                     </div>
                     <button
                         type="button"
@@ -93,12 +93,12 @@ const AddressPage = () => {
                 </div>
 
                 {showAddForm && (
-                    <div className="basic-card" style={{ marginBottom: '2rem' }}>
-                        <h2 className="basic-card-title">Add New Address</h2>
+                    <div className="basic-card" style={{ marginBottom: '2.5rem', border: '1px solid var(--pcolor)' }}>
+                        <h2 className="basic-card-title">Add New Delivery Location</h2>
                         <form onSubmit={handleAdd}>
                             <div className="basic-form-row">
                                 <div className="basic-form-group">
-                                    <label className="basic-label">Address Label</label>
+                                    <label className="basic-label">Address Type</label>
                                     <select
                                         className="basic-select"
                                         value={newAddress.title}
@@ -106,7 +106,7 @@ const AddressPage = () => {
                                     >
                                         <option value="Home">Home</option>
                                         <option value="Office">Office</option>
-                                        <option value="Parents">Parents</option>
+                                        <option value="Weekend Villa">Weekend Villa</option>
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>
@@ -140,7 +140,7 @@ const AddressPage = () => {
                                 <input
                                     type="text"
                                     className="basic-input"
-                                    placeholder="e.g. Near Main Market"
+                                    placeholder="e.g. Near Community Center"
                                     value={newAddress.line2}
                                     onChange={(e) => setNewAddress({ ...newAddress, line2: e.target.value })}
                                 />
@@ -163,7 +163,7 @@ const AddressPage = () => {
                                     </select>
                                 </div>
                                 <div className="basic-form-group">
-                                    <label className="basic-label">Postal Code</label>
+                                    <label className="basic-label">Postal Pincode</label>
                                     <input
                                         type="text"
                                         required
@@ -176,7 +176,7 @@ const AddressPage = () => {
                             </div>
 
                             <div className="basic-form-group">
-                                <label className="basic-label">Contact Phone Number</label>
+                                <label className="basic-label">Contact Phone (For Morning Gate Pass / Drop Off)</label>
                                 <input
                                     type="tel"
                                     required
@@ -187,38 +187,45 @@ const AddressPage = () => {
                                 />
                             </div>
 
-                            <button type="submit" className="basic-btn">Save Address</button>
+                            <button type="submit" className="basic-btn">Save Address Location</button>
                         </form>
                     </div>
                 )}
 
                 <div className="basic-grid-2">
                     {addresses.map(item => (
-                        <div key={item.id} className="basic-card" style={{ border: item.isDefault ? '2px solid #16a34a' : '1px solid #e5e7eb' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                        <div
+                            key={item.id}
+                            className="basic-card"
+                            style={{
+                                border: item.isDefault ? '2px solid var(--pcolor)' : '1px solid var(--borderColor)',
+                                background: item.isDefault ? 'var(--bgcolor)' : 'var(--hbgColor)'
+                            }}
+                        >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                                 <span className="basic-badge">{item.title}</span>
                                 {item.isDefault && (
-                                    <span className="basic-badge basic-badge-success">Default Delivery</span>
+                                    <span className="basic-badge basic-badge-success">Default Harvest Route</span>
                                 )}
                             </div>
 
-                            <h3 style={{ fontSize: '1.1rem', margin: '0.5rem 0', color: '#111827' }}>{item.name}</h3>
-                            <p style={{ color: '#4b5563', fontSize: '0.9rem', lineHeight: '1.4', margin: '0 0 0.5rem 0' }}>
+                            <h3 style={{ fontSize: '1.25rem', margin: '0.5rem 0', color: 'var(--primary-color)' }}>{item.name}</h3>
+                            <p style={{ color: 'var(--descriptionColor)', fontSize: '0.95rem', lineHeight: '1.5', margin: '0 0 0.75rem 0' }}>
                                 {item.line1}<br />
                                 {item.line2 && <>{item.line2}<br /></>}
                                 {item.city} - {item.pincode}
                             </p>
-                            <p style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '1rem' }}>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--pcolor)', marginBottom: '1.25rem' }}>
                                 Phone: {item.phone}
                             </p>
 
-                            <div style={{ display: 'flex', gap: '0.5rem' }}>
+                            <div style={{ display: 'flex', gap: '0.75rem' }}>
                                 {!item.isDefault && (
                                     <button
                                         type="button"
                                         onClick={() => setDefault(item.id)}
-                                        className="basic-btn-secondary"
-                                        style={{ padding: '0.35rem 0.75rem', fontSize: '0.85rem', cursor: 'pointer' }}
+                                        className="basic-btn basic-btn-secondary"
+                                        style={{ padding: '0.45rem 1rem', fontSize: '0.85rem', cursor: 'pointer' }}
                                     >
                                         Set as Default
                                     </button>
@@ -226,8 +233,8 @@ const AddressPage = () => {
                                 <button
                                     type="button"
                                     onClick={() => deleteAddress(item.id)}
-                                    className="basic-btn-secondary"
-                                    style={{ padding: '0.35rem 0.75rem', fontSize: '0.85rem', color: '#dc2626', cursor: 'pointer' }}
+                                    className="basic-btn basic-btn-secondary"
+                                    style={{ padding: '0.45rem 1rem', fontSize: '0.85rem', color: 'var(--hightColor)', cursor: 'pointer' }}
                                 >
                                     Delete
                                 </button>

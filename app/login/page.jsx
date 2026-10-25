@@ -19,27 +19,37 @@ const LoginPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(mode === 'login' ? `Logged in successfully as ${form.email}` : `Account created for ${form.name}`);
+        alert(mode === 'login' ? `Welcome back, ${form.email}!` : `Account created for ${form.name}!`);
     };
 
     return (
         <div className="basic-page">
             <BasicNavbar />
 
-            <main className="basic-container" style={{ maxWidth: '480px' }}>
-                <div className="basic-card" style={{ marginTop: '2rem' }}>
-                    <div style={{ display: 'flex', borderBottom: '1px solid #e5e7eb', marginBottom: '1.5rem' }}>
+            <main className="basic-container" style={{ maxWidth: '520px', padding: '4rem 1.5rem' }}>
+                <div className="basic-card" style={{ border: '1px solid var(--borderColor)' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                        <h1 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--primary-color)', margin: '0 0 0.5rem 0' }}>
+                            EAT Account
+                        </h1>
+                        <p style={{ color: 'var(--pcolor)', fontSize: '0.95rem', margin: 0 }}>
+                            Manage your farm subscriptions & dining bookings
+                        </p>
+                    </div>
+
+                    <div style={{ display: 'flex', borderBottom: '1px solid var(--borderColor)', marginBottom: '1.75rem' }}>
                         <button
                             type="button"
                             onClick={() => setMode('login')}
                             style={{
                                 flex: 1,
-                                padding: '0.75rem',
+                                padding: '0.85rem',
                                 background: 'none',
                                 border: 'none',
-                                borderBottom: mode === 'login' ? '2px solid #111827' : 'none',
-                                fontWeight: mode === 'login' ? 700 : 500,
-                                color: mode === 'login' ? '#111827' : '#6b7280',
+                                borderBottom: mode === 'login' ? '3px solid var(--pcolor)' : 'none',
+                                fontWeight: mode === 'login' ? 800 : 500,
+                                color: mode === 'login' ? 'var(--pcolor)' : 'var(--descriptionColor)',
+                                fontSize: '1.05rem',
                                 cursor: 'pointer'
                             }}
                         >
@@ -50,12 +60,13 @@ const LoginPage = () => {
                             onClick={() => setMode('signup')}
                             style={{
                                 flex: 1,
-                                padding: '0.75rem',
+                                padding: '0.85rem',
                                 background: 'none',
                                 border: 'none',
-                                borderBottom: mode === 'signup' ? '2px solid #111827' : 'none',
-                                fontWeight: mode === 'signup' ? 700 : 500,
-                                color: mode === 'signup' ? '#111827' : '#6b7280',
+                                borderBottom: mode === 'signup' ? '3px solid var(--pcolor)' : 'none',
+                                fontWeight: mode === 'signup' ? 800 : 500,
+                                color: mode === 'signup' ? 'var(--pcolor)' : 'var(--descriptionColor)',
+                                fontSize: '1.05rem',
                                 cursor: 'pointer'
                             }}
                         >
@@ -94,7 +105,7 @@ const LoginPage = () => {
 
                         {mode === 'signup' && (
                             <div className="basic-form-group">
-                                <label className="basic-label">Phone Number</label>
+                                <label className="basic-label">Phone Number (For morning SMS alert)</label>
                                 <input
                                     type="tel"
                                     name="phone"
@@ -121,21 +132,21 @@ const LoginPage = () => {
                         </div>
 
                         {mode === 'login' && (
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.25rem', fontSize: '0.85rem' }}>
-                                <label style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer' }}>
-                                    <input type="checkbox" /> Remember me
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
+                                <label style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer', color: 'var(--descriptionColor)' }}>
+                                    <input type="checkbox" style={{ accentColor: 'var(--pcolor)' }} /> Remember me
                                 </label>
-                                <a href="#" style={{ color: '#16a34a', textDecoration: 'none' }}>Forgot password?</a>
+                                <a href="#" style={{ color: 'var(--pcolor)', textDecoration: 'none' }}>Forgot password?</a>
                             </div>
                         )}
 
-                        <button type="submit" className="basic-btn" style={{ width: '100%', padding: '0.75rem' }}>
-                            {mode === 'login' ? 'Sign In to EAT' : 'Register Account'}
+                        <button type="submit" className="basic-btn" style={{ width: '100%', padding: '0.85rem', fontSize: '1.05rem' }}>
+                            {mode === 'login' ? 'Sign In to EAT' : 'Register Subscription Account'}
                         </button>
                     </form>
 
-                    <p style={{ fontSize: '0.8rem', color: '#6b7280', marginTop: '1.5rem', textAlign: 'center' }}>
-                        By continuing, you agree to EAT Terms of Service and Privacy Policy.
+                    <p style={{ fontSize: '0.82rem', color: 'var(--descriptionColor)', marginTop: '1.75rem', textAlign: 'center', lineHeight: '1.5' }}>
+                        By continuing, you agree to EAT Terms of Service and Farm-Direct Harvest Policy.
                     </p>
                 </div>
             </main>

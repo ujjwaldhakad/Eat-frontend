@@ -84,23 +84,23 @@ const RecipesPage = () => {
 
             <main className="basic-container">
                 <div className="basic-page-header">
-                    <h1 className="basic-page-title">Chef's Box Recipes</h1>
+                    <h1 className="basic-page-title">Chef's Harvest Recipes</h1>
                     <p className="basic-page-desc">Every box includes recipe cards tailored to that week's harvest. Here are our seasonal favorites.</p>
                 </div>
 
-                <div className="basic-grid-3" style={{ marginBottom: '2rem' }}>
+                <div className="basic-grid-3" style={{ marginBottom: '2.5rem' }}>
                     {recipes.map(recipe => (
                         <div key={recipe.id} className="basic-card" style={{ display: 'flex', flexDirection: 'column' }}>
                             <span className="basic-badge basic-badge-success">{recipe.produce}</span>
-                            <h2 style={{ fontSize: '1.2rem', margin: '0.75rem 0 0.5rem 0', color: '#111827' }}>
+                            <h2 style={{ fontSize: '1.35rem', margin: '1rem 0 0.5rem 0', color: 'var(--primary-color)' }}>
                                 {recipe.title}
                             </h2>
-                            <p style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1rem', flex: 1 }}>
+                            <p style={{ color: 'var(--descriptionColor)', fontSize: '0.95rem', marginBottom: '1.25rem', flex: 1, lineHeight: '1.5' }}>
                                 {recipe.desc}
                             </p>
 
-                            <div style={{ fontSize: '0.85rem', color: '#374151', marginBottom: '1rem' }}>
-                                ⏱ Time: <strong>{recipe.time}</strong> · Serves: <strong>{recipe.servings}</strong>
+                            <div style={{ fontSize: '0.9rem', color: 'var(--pcolor)', marginBottom: '1.25rem', fontWeight: 600 }}>
+                                ⏱ {recipe.time} · 🍽 Serves {recipe.servings}
                             </div>
 
                             <button
@@ -117,41 +117,41 @@ const RecipesPage = () => {
 
                 {/* Recipe Detail Modal / View */}
                 {activeRecipe && (
-                    <div className="basic-card" style={{ border: '2px solid #16a34a' }}>
+                    <div className="basic-card" style={{ border: '2px solid var(--pcolor)' }}>
                         {(() => {
                             const r = recipes.find(x => x.id === activeRecipe);
                             return (
                                 <div>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid var(--borderColor)', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
                                         <div>
-                                            <h2 style={{ fontSize: '1.5rem', color: '#111827', margin: 0 }}>{r.title}</h2>
-                                            <p style={{ color: '#6b7280', margin: '0.25rem 0 1rem 0' }}>{r.desc}</p>
+                                            <h2 style={{ fontSize: '1.8rem', color: 'var(--primary-color)', margin: 0 }}>{r.title}</h2>
+                                            <p style={{ color: 'var(--pcolor)', margin: '0.35rem 0 0 0', fontSize: '1rem' }}>{r.desc}</p>
                                         </div>
                                         <button
                                             type="button"
                                             onClick={() => setActiveRecipe(null)}
-                                            className="basic-btn-secondary"
-                                            style={{ padding: '0.4rem 0.8rem', cursor: 'pointer' }}
+                                            className="basic-btn basic-btn-secondary"
+                                            style={{ padding: '0.4rem 0.9rem', cursor: 'pointer' }}
                                         >
-                                            Close
+                                            ✕ Close
                                         </button>
                                     </div>
 
-                                    <div className="basic-grid-2" style={{ marginTop: '1rem' }}>
-                                        <div>
-                                            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#111827' }}>Ingredients:</h3>
-                                            <ul style={{ paddingLeft: '1.25rem', color: '#374151', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                                    <div className="basic-grid-2">
+                                        <div style={{ background: 'var(--hbgColor)', padding: '1.5rem', borderRadius: '0.75rem', border: '1px solid var(--borderColor)' }}>
+                                            <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--pcolor)' }}>Ingredients:</h3>
+                                            <ul style={{ paddingLeft: '1.25rem', color: 'var(--primary-color)', fontSize: '0.95rem', lineHeight: '1.8' }}>
                                                 {r.ingredients.map((ing, i) => (
                                                     <li key={i}>{ing}</li>
                                                 ))}
                                             </ul>
                                         </div>
 
-                                        <div>
-                                            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#111827' }}>Step-by-Step Instructions:</h3>
-                                            <ol style={{ paddingLeft: '1.25rem', color: '#374151', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                                        <div style={{ background: 'var(--hbgColor)', padding: '1.5rem', borderRadius: '0.75rem', border: '1px solid var(--borderColor)' }}>
+                                            <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--pcolor)' }}>Step-by-Step Instructions:</h3>
+                                            <ol style={{ paddingLeft: '1.25rem', color: 'var(--primary-color)', fontSize: '0.95rem', lineHeight: '1.8' }}>
                                                 {r.steps.map((step, i) => (
-                                                    <li key={i} style={{ marginBottom: '0.5rem' }}>{step}</li>
+                                                    <li key={i} style={{ marginBottom: '0.65rem' }}>{step}</li>
                                                 ))}
                                             </ol>
                                         </div>

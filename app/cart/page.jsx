@@ -37,13 +37,13 @@ const CartPage = () => {
             <main className="basic-container">
                 <div className="basic-page-header">
                     <h1 className="basic-page-title">Shopping Cart</h1>
-                    <p className="basic-page-desc">Review your selected produce boxes and kitchen items.</p>
+                    <p className="basic-page-desc">Farm-direct produce & wood-fired kitchen selections.</p>
                 </div>
 
                 {items.length === 0 ? (
-                    <div className="basic-card" style={{ textAlign: 'center', padding: '3rem' }}>
-                        <p style={{ marginBottom: '1rem', color: '#6b7280' }}>Your cart is currently empty.</p>
-                        <Link href="/boxes" className="basic-btn">Browse Boxes</Link>
+                    <div className="basic-card" style={{ textAlign: 'center', padding: '3.5rem' }}>
+                        <p style={{ marginBottom: '1.5rem', color: 'var(--descriptionColor)', fontSize: '1.1rem' }}>Your shopping bag is currently empty.</p>
+                        <Link href="/boxes" className="basic-btn">Browse Harvest Boxes</Link>
                     </div>
                 ) : (
                     <div className="basic-grid-2">
@@ -64,34 +64,36 @@ const CartPage = () => {
                                     {items.map(item => (
                                         <tr key={item.id}>
                                             <td>
-                                                <strong>{item.name}</strong>
-                                                <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>{item.type}</div>
+                                                <strong style={{ color: 'var(--primary-color)' }}>{item.name}</strong>
+                                                <div style={{ fontSize: '0.85rem', color: 'var(--pcolor)' }}>{item.type}</div>
                                             </td>
                                             <td>₹{item.price}</td>
                                             <td>
-                                                <button
-                                                    type="button"
-                                                    onClick={() => updateQty(item.id, -1)}
-                                                    style={{ padding: '0.2rem 0.5rem', marginRight: '0.35rem', cursor: 'pointer' }}
-                                                >
-                                                    -
-                                                </button>
-                                                <span>{item.quantity}</span>
-                                                <button
-                                                    type="button"
-                                                    onClick={() => updateQty(item.id, 1)}
-                                                    style={{ padding: '0.2rem 0.5rem', marginLeft: '0.35rem', cursor: 'pointer' }}
-                                                >
-                                                    +
-                                                </button>
+                                                <div style={{ display: 'inline-flex', alignItems: 'center', background: 'var(--hbgColor)', border: '1px solid var(--borderColor)', borderRadius: '2rem', padding: '2px 8px' }}>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => updateQty(item.id, -1)}
+                                                        style={{ background: 'none', border: 'none', color: 'var(--pcolor)', fontSize: '1.1rem', cursor: 'pointer', padding: '0 6px' }}
+                                                    >
+                                                        -
+                                                    </button>
+                                                    <span style={{ padding: '0 6px', fontWeight: 'bold' }}>{item.quantity}</span>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => updateQty(item.id, 1)}
+                                                        style={{ background: 'none', border: 'none', color: 'var(--pcolor)', fontSize: '1.1rem', cursor: 'pointer', padding: '0 6px' }}
+                                                    >
+                                                        +
+                                                    </button>
+                                                </div>
                                             </td>
-                                            <td>₹{item.price * item.quantity}</td>
+                                            <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>₹{item.price * item.quantity}</td>
                                             <td>
                                                 <button
                                                     type="button"
                                                     onClick={() => removeItem(item.id)}
                                                     className="basic-btn-secondary"
-                                                    style={{ padding: '0.25rem 0.5rem', fontSize: '0.8rem', cursor: 'pointer' }}
+                                                    style={{ padding: '0.3rem 0.75rem', fontSize: '0.85rem', color: 'var(--hightColor)', cursor: 'pointer' }}
                                                 >
                                                     Remove
                                                 </button>
@@ -106,27 +108,27 @@ const CartPage = () => {
                         <div className="basic-card">
                             <h2 className="basic-card-title">Order Summary</h2>
 
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.85rem', color: 'var(--descriptionColor)' }}>
                                 <span>Subtotal</span>
-                                <strong>₹{subtotal}</strong>
+                                <strong style={{ color: 'var(--primary-color)' }}>₹{subtotal}</strong>
                             </div>
 
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                                <span>Delivery Fee</span>
-                                <strong>₹{deliveryFee}</strong>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.85rem', color: 'var(--descriptionColor)' }}>
+                                <span>Morning Cold-Chain Delivery</span>
+                                <strong style={{ color: 'var(--primary-color)' }}>₹{deliveryFee}</strong>
                             </div>
 
-                            <hr style={{ border: 'none', borderTop: '1px solid #e5e7eb', margin: '1rem 0' }} />
+                            <hr style={{ border: 'none', borderTop: '1px solid var(--borderColor)', margin: '1.25rem 0' }} />
 
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem', fontSize: '1.2rem' }}>
-                                <strong>Total</strong>
-                                <strong>₹{total}</strong>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.75rem', fontSize: '1.35rem' }}>
+                                <strong style={{ color: 'var(--primary-color)' }}>Total Amount</strong>
+                                <strong style={{ color: 'var(--pcolor)' }}>₹{total}</strong>
                             </div>
 
                             <div className="basic-form-group">
-                                <label className="basic-label">Promo Code</label>
-                                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                                    <input type="text" placeholder="Enter code" className="basic-input" />
+                                <label className="basic-label">Promo / Referral Code</label>
+                                <div style={{ display: 'flex', gap: '0.65rem' }}>
+                                    <input type="text" placeholder="e.g. HARVEST20" className="basic-input" />
                                     <button type="button" className="basic-btn basic-btn-secondary">Apply</button>
                                 </div>
                             </div>
@@ -134,14 +136,14 @@ const CartPage = () => {
                             <button
                                 type="button"
                                 className="basic-btn"
-                                style={{ width: '100%', padding: '0.75rem' }}
-                                onClick={() => alert("Order placed successfully (Demo)!")}
+                                style={{ width: '100%', padding: '0.9rem', fontSize: '1.1rem' }}
+                                onClick={() => alert("Order placed successfully! Boxes will dispatch tomorrow morning.")}
                             >
-                                Proceed to Checkout (₹{total})
+                                Checkout • ₹{total}
                             </button>
 
-                            <p style={{ fontSize: '0.8rem', color: '#6b7280', marginTop: '1rem', textAlign: 'center' }}>
-                                100% farm-direct produce. Cancel or skip any week easily.
+                            <p style={{ fontSize: '0.85rem', color: 'var(--descriptionColor)', marginTop: '1.25rem', textAlign: 'center' }}>
+                                🍃 100% plastic-free packaging. Hand-picked at dawn.
                             </p>
                         </div>
                     </div>

@@ -19,14 +19,14 @@ const WishlistPage = () => {
             name: "Smoked Mushroom Toast",
             price: 380,
             category: "Kitchen Specialty",
-            desc: "Sourdough, garlic butter, fresh garden herbs."
+            desc: "Sourdough, garlic butter, fresh garden herbs kissed by charcoal flame."
         },
         {
             id: 3,
             name: "The Kitchen Box",
             price: 92,
             category: "Produce Box",
-            desc: "14 seasonal vegetables, 4 bunched herbs, 3 recipe cards."
+            desc: "14 seasonal vegetables, 4 bunched herbs, 3 recipe cards for a full household."
         }
     ]);
 
@@ -41,40 +41,46 @@ const WishlistPage = () => {
             <main className="basic-container">
                 <div className="basic-page-header">
                     <h1 className="basic-page-title">My Wishlist</h1>
-                    <p className="basic-page-desc">Items and produce plans you saved for later.</p>
+                    <p className="basic-page-desc">Produce plans and wood-fire kitchen dishes you saved for later.</p>
                 </div>
 
                 {wishlist.length === 0 ? (
-                    <div className="basic-card" style={{ textAlign: 'center', padding: '3rem' }}>
-                        <p style={{ color: '#6b7280', marginBottom: '1rem' }}>Your wishlist is empty.</p>
+                    <div className="basic-card" style={{ textAlign: 'center', padding: '3.5rem' }}>
+                        <p style={{ color: 'var(--descriptionColor)', fontSize: '1.1rem', marginBottom: '1.5rem' }}>Your wishlist is currently empty.</p>
                         <Link href="/boxes" className="basic-btn">Explore Produce Boxes</Link>
                     </div>
                 ) : (
                     <div className="basic-grid-3">
                         {wishlist.map(item => (
-                            <div key={item.id} className="basic-card">
-                                <span className="basic-badge basic-badge-success">{item.category}</span>
-                                <h3 style={{ margin: '0.75rem 0 0.5rem 0', fontSize: '1.2rem', color: '#111827' }}>
-                                    {item.name}
-                                </h3>
-                                <p style={{ fontSize: '0.9rem', color: '#6b7280', marginBottom: '1rem' }}>
-                                    {item.desc}
-                                </p>
-                                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111827', marginBottom: '1rem' }}>
-                                    ₹{item.price}
+                            <div key={item.id} className="basic-card" style={{ display: 'flex', flexDirection: 'column' }}>
+                                <div>
+                                    <span className="basic-badge">{item.category}</span>
+                                    <h3 style={{ margin: '1rem 0 0.5rem 0', fontSize: '1.35rem', color: 'var(--primary-color)' }}>
+                                        {item.name}
+                                    </h3>
+                                    <p style={{ fontSize: '0.95rem', color: 'var(--descriptionColor)', marginBottom: '1.25rem', lineHeight: '1.5' }}>
+                                        {item.desc}
+                                    </p>
                                 </div>
-                                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                                    <Link href="/cart" className="basic-btn" style={{ flex: 1, textAlign: 'center' }}>
-                                        Move to Cart
-                                    </Link>
-                                    <button
-                                        type="button"
-                                        onClick={() => removeFromWishlist(item.id)}
-                                        className="basic-btn basic-btn-secondary"
-                                        style={{ padding: '0.5rem 0.75rem' }}
-                                    >
-                                        Remove
-                                    </button>
+
+                                <div style={{ marginTop: 'auto' }}>
+                                    <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--pcolor)', marginBottom: '1.25rem' }}>
+                                        ₹{item.price}
+                                    </div>
+                                    <div style={{ display: 'flex', gap: '0.75rem' }}>
+                                        <Link href="/cart" className="basic-btn" style={{ flex: 1, textAlign: 'center' }}>
+                                            Add to Cart
+                                        </Link>
+                                        <button
+                                            type="button"
+                                            onClick={() => removeFromWishlist(item.id)}
+                                            className="basic-btn basic-btn-secondary"
+                                            style={{ padding: '0.6rem 1rem', color: 'var(--hightColor)' }}
+                                            aria-label="Remove item"
+                                        >
+                                            ✕
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         ))}

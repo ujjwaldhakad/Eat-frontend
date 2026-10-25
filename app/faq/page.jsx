@@ -49,7 +49,7 @@ const FaqPage = () => {
             <main className="basic-container">
                 <div className="basic-page-header">
                     <h1 className="basic-page-title">Frequently Asked Questions</h1>
-                    <p className="basic-page-desc">Common questions about our produce sourcing, subscription delivery, and packaging.</p>
+                    <p className="basic-page-desc">Common questions about produce sourcing, subscription delivery, and plastic-free packaging.</p>
                 </div>
 
                 <div className="basic-card">
@@ -59,8 +59,8 @@ const FaqPage = () => {
                             <div
                                 key={index}
                                 style={{
-                                    borderBottom: index === faqs.length - 1 ? 'none' : '1px solid #e5e7eb',
-                                    padding: '1rem 0'
+                                    borderBottom: index === faqs.length - 1 ? 'none' : '1px solid rgba(255, 251, 198, 0.15)',
+                                    padding: '1.25rem 0'
                                 }}
                             >
                                 <button
@@ -74,21 +74,21 @@ const FaqPage = () => {
                                         background: 'none',
                                         border: 'none',
                                         textAlign: 'left',
-                                        fontSize: '1.05rem',
-                                        fontWeight: 600,
-                                        color: '#111827',
+                                        fontSize: '1.2rem',
+                                        fontWeight: 700,
+                                        color: isOpen ? 'var(--pcolor)' : 'var(--primary-color)',
                                         cursor: 'pointer',
                                         padding: 0
                                     }}
                                 >
                                     <span>{faq.q}</span>
-                                    <span style={{ fontSize: '1.25rem', color: '#6b7280', marginLeft: '1rem' }}>
+                                    <span style={{ fontSize: '1.5rem', color: 'var(--pcolor)', marginLeft: '1rem' }}>
                                         {isOpen ? '−' : '+'}
                                     </span>
                                 </button>
 
                                 {isOpen && (
-                                    <p style={{ margin: '0.75rem 0 0 0', color: '#4b5563', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                                    <p style={{ margin: '1rem 0 0 0', color: 'var(--descriptionColor)', fontSize: '1rem', lineHeight: '1.7' }}>
                                         {faq.a}
                                     </p>
                                 )}
@@ -97,10 +97,10 @@ const FaqPage = () => {
                     })}
                 </div>
 
-                <div className="basic-card" style={{ background: '#f3f4f6', textAlign: 'center', padding: '2rem' }}>
-                    <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#111827' }}>Still have a question?</h3>
-                    <p style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1rem' }}>
-                        Our customer support team is happy to help you with orders and subscriptions.
+                <div className="basic-card" style={{ background: 'var(--hbgColor)', textAlign: 'center', padding: '2.5rem', border: '1px solid var(--borderColor)' }}>
+                    <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', color: 'var(--primary-color)' }}>Still have a question?</h3>
+                    <p style={{ color: 'var(--descriptionColor)', fontSize: '1rem', marginBottom: '1.5rem' }}>
+                        Our customer support team is happy to assist you with orders and farm questions.
                     </p>
                     <a href="/contact" className="basic-btn">Contact Support Team</a>
                 </div>

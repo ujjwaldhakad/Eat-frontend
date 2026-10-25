@@ -58,26 +58,26 @@ const CareersPage = () => {
                     <p className="basic-page-desc">Join our team connecting regional organic farms directly to dinner tables.</p>
                 </div>
 
-                <div className="basic-card" style={{ marginBottom: '2rem' }}>
+                <div className="basic-card" style={{ marginBottom: '2.5rem' }}>
                     <h2 className="basic-card-title">Why work with us?</h2>
-                    <p style={{ color: '#4b5563', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                        We are building an equitable supply chain that pays farmers above market rates and delivers the cleanest vegetables to households without plastic packaging. We offer competitive pay, health coverage, and a weekly farm produce box for every employee.
+                    <p style={{ color: 'var(--descriptionColor)', lineHeight: '1.7', fontSize: '1.05rem', margin: 0 }}>
+                        We are building an equitable supply chain that pays farmers above market rates and delivers the cleanest vegetables to households without plastic packaging. We offer competitive pay, comprehensive health coverage, and a weekly farm produce box for every employee.
                     </p>
                 </div>
 
-                <h2 style={{ fontSize: '1.4rem', color: '#111827', marginBottom: '1rem' }}>Open Positions ({jobs.length})</h2>
+                <h2 style={{ fontSize: '1.6rem', color: 'var(--primary-color)', marginBottom: '1.25rem' }}>Open Positions ({jobs.length})</h2>
 
-                <div className="basic-grid-2" style={{ marginBottom: '2rem' }}>
+                <div className="basic-grid-2" style={{ marginBottom: '2.5rem' }}>
                     {jobs.map(job => (
                         <div key={job.id} className="basic-card">
-                            <span className="basic-badge basic-badge-success">{job.dept}</span>
-                            <h3 style={{ margin: '0.75rem 0 0.25rem 0', fontSize: '1.15rem', color: '#111827' }}>
+                            <span className="basic-badge">{job.dept}</span>
+                            <h3 style={{ margin: '1rem 0 0.4rem 0', fontSize: '1.3rem', color: 'var(--primary-color)' }}>
                                 {job.title}
                             </h3>
-                            <div style={{ fontSize: '0.85rem', color: '#6b7280', marginBottom: '0.75rem' }}>
+                            <div style={{ fontSize: '0.9rem', color: 'var(--pcolor)', marginBottom: '1rem', fontWeight: 600 }}>
                                 📍 {job.location} · ⏱ {job.type}
                             </div>
-                            <p style={{ color: '#4b5563', fontSize: '0.9rem', marginBottom: '1.25rem' }}>
+                            <p style={{ color: 'var(--descriptionColor)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
                                 {job.desc}
                             </p>
                             <button
@@ -94,25 +94,25 @@ const CareersPage = () => {
 
                 {/* Application Form */}
                 {selectedRole && (
-                    <div className="basic-card" style={{ border: '2px solid #111827' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                    <div className="basic-card" style={{ border: '2px solid var(--pcolor)' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', borderBottom: '1px solid var(--borderColor)', paddingBottom: '0.75rem' }}>
                             <h2 className="basic-card-title" style={{ margin: 0 }}>
-                                Application: {selectedRole}
+                                Application: <span style={{ color: 'var(--pcolor)' }}>{selectedRole}</span>
                             </h2>
                             <button
                                 type="button"
                                 onClick={() => setSelectedRole(null)}
-                                className="basic-btn-secondary"
-                                style={{ padding: '0.35rem 0.75rem', cursor: 'pointer' }}
+                                className="basic-btn basic-btn-secondary"
+                                style={{ padding: '0.35rem 0.85rem', cursor: 'pointer' }}
                             >
-                                Cancel
+                                ✕ Cancel
                             </button>
                         </div>
 
                         {applied ? (
-                            <div style={{ padding: '1.5rem', background: '#dcfce7', borderRadius: '4px', color: '#15803d' }}>
-                                <strong>Application Submitted!</strong>
-                                <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem' }}>
+                            <div style={{ padding: '2rem', background: 'rgba(29, 97, 29, 0.25)', border: '1px solid var(--mainColor)', borderRadius: '0.75rem', color: '#86efac' }}>
+                                <strong style={{ fontSize: '1.2rem', display: 'block', marginBottom: '0.5rem' }}>✓ Application Submitted!</strong>
+                                <p style={{ margin: 0, color: 'var(--primary-color)', fontSize: '0.95rem', lineHeight: '1.5' }}>
                                     Thank you for applying. Our talent team will review your qualifications and reach out via email.
                                 </p>
                             </div>
