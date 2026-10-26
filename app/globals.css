@@ -528,12 +528,15 @@ li {
 .footer-item {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .f-section2,
 .f-section3,
-.f-section4 {
+.f-section4,
+.f-section5 {
   display: flex;
   justify-content: left;
   flex-direction: column;
