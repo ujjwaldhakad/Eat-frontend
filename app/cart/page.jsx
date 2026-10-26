@@ -50,58 +50,60 @@ const CartPage = () => {
                         {/* Items Table */}
                         <div className="basic-card">
                             <h2 className="basic-card-title">Cart Items ({items.length})</h2>
-                            <table className="basic-table">
-                                <thead>
-                                    <tr>
-                                        <th>Item</th>
-                                        <th>Price</th>
-                                        <th>Qty</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {items.map(item => (
-                                        <tr key={item.id}>
-                                            <td>
-                                                <strong style={{ color: 'var(--primary-color)' }}>{item.name}</strong>
-                                                <div style={{ fontSize: '0.85rem', color: 'var(--pcolor)' }}>{item.type}</div>
-                                            </td>
-                                            <td>₹{item.price}</td>
-                                            <td>
-                                                <div style={{ display: 'inline-flex', alignItems: 'center', background: 'var(--hbgColor)', border: '1px solid var(--borderColor)', borderRadius: '2rem', padding: '2px 8px' }}>
-                                                    <button
-                                                        type="button"
-                                                        onClick={() => updateQty(item.id, -1)}
-                                                        style={{ background: 'none', border: 'none', color: 'var(--pcolor)', fontSize: '1.1rem', cursor: 'pointer', padding: '0 6px' }}
-                                                    >
-                                                        -
-                                                    </button>
-                                                    <span style={{ padding: '0 6px', fontWeight: 'bold' }}>{item.quantity}</span>
-                                                    <button
-                                                        type="button"
-                                                        onClick={() => updateQty(item.id, 1)}
-                                                        style={{ background: 'none', border: 'none', color: 'var(--pcolor)', fontSize: '1.1rem', cursor: 'pointer', padding: '0 6px' }}
-                                                    >
-                                                        +
-                                                    </button>
-                                                </div>
-                                            </td>
-                                            <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>₹{item.price * item.quantity}</td>
-                                            <td>
-                                                <button
-                                                    type="button"
-                                                    onClick={() => removeItem(item.id)}
-                                                    className="basic-btn-secondary"
-                                                    style={{ padding: '0.3rem 0.75rem', fontSize: '0.85rem', color: 'var(--hightColor)', cursor: 'pointer' }}
-                                                >
-                                                    Remove
-                                                </button>
-                                            </td>
+                            <div className="basic-table-wrap">
+                                <table className="basic-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Price</th>
+                                            <th>Qty</th>
+                                            <th>Total</th>
+                                            <th>Action</th>
                                         </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        {items.map(item => (
+                                            <tr key={item.id}>
+                                                <td>
+                                                    <strong style={{ color: 'var(--primary-color)' }}>{item.name}</strong>
+                                                    <div style={{ fontSize: '0.85rem', color: 'var(--pcolor)' }}>{item.type}</div>
+                                                </td>
+                                                <td>₹{item.price}</td>
+                                                <td>
+                                                    <div style={{ display: 'inline-flex', alignItems: 'center', background: 'var(--hbgColor)', border: '1px solid var(--borderColor)', borderRadius: '2rem', padding: '2px 8px' }}>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => updateQty(item.id, -1)}
+                                                            style={{ background: 'none', border: 'none', color: 'var(--pcolor)', fontSize: '1.1rem', cursor: 'pointer', padding: '0 6px' }}
+                                                        >
+                                                            -
+                                                        </button>
+                                                        <span style={{ padding: '0 6px', fontWeight: 'bold' }}>{item.quantity}</span>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => updateQty(item.id, 1)}
+                                                            style={{ background: 'none', border: 'none', color: 'var(--pcolor)', fontSize: '1.1rem', cursor: 'pointer', padding: '0 6px' }}
+                                                        >
+                                                            +
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>₹{item.price * item.quantity}</td>
+                                                <td>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => removeItem(item.id)}
+                                                        className="basic-btn-secondary"
+                                                        style={{ padding: '0.3rem 0.75rem', fontSize: '0.85rem', color: 'var(--hightColor)', cursor: 'pointer' }}
+                                                    >
+                                                        Remove
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
 
                         {/* Order Summary */}

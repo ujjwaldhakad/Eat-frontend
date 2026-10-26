@@ -23,12 +23,12 @@ const BasicNavbar = () => {
                 </button>
 
                 <div className={`nav-links ${menuOpen ? "show" : ""}`}>
-                    <Link href="/cart" className="nav-item" aria-label="Cart"><ShoppingBag /></Link>
-                    <Link href="/wishlist" className="nav-item" aria-label="Wishlist"><Wishlist /></Link>
-                    <Link href="/restaurant" className="nav-item">Restaurant</Link>
-                    <Link href="/contact" className="nav-item">Contact</Link>
-                    <Link href="/address" className="nav-item">Address</Link>
-                    <Link href="/login" className="nav-item">Login</Link>
+                    <Link href="/cart" className="nav-item" aria-label="Cart" onClick={() => setMenuOpen(false)}><ShoppingBag /></Link>
+                    <Link href="/wishlist" className="nav-item" aria-label="Wishlist" onClick={() => setMenuOpen(false)}><Wishlist /></Link>
+                    <Link href="/restaurant" className="nav-item" onClick={() => setMenuOpen(false)}>Restaurant</Link>
+                    <Link href="/contact" className="nav-item" onClick={() => setMenuOpen(false)}>Contact</Link>
+                    <Link href="/address" className="nav-item" onClick={() => setMenuOpen(false)}>Address</Link>
+                    <Link href="/login" className="nav-item" onClick={() => setMenuOpen(false)}>Login</Link>
                 </div>
             </nav>
         </header>

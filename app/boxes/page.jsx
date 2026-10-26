@@ -83,48 +83,50 @@ const BoxesPage = () => {
                                 Grown at Dana R.'s Two Rivers Farm & Miguel A.'s Alder Hollow. Picked before 7:00 AM.
                             </p>
 
-                            <table className="basic-table">
-                                <thead>
-                                    <tr>
-                                        <th>Produce Item</th>
-                                        <th>Origin Farm</th>
-                                        <th>Best Used For</th>
-                                        <th>Portion</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong style={{ color: 'var(--primary-color)' }}>Roma & Sun Gold Tomatoes</strong></td>
-                                        <td style={{ color: 'var(--pcolor)' }}>Sonoma County (Dana R.)</td>
-                                        <td style={{ color: 'var(--descriptionColor)' }}>Slow-roasted sauces, fresh salads</td>
-                                        <td>650g</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong style={{ color: 'var(--primary-color)' }}>Tuscan Lacinato Kale</strong></td>
-                                        <td style={{ color: 'var(--pcolor)' }}>Willamette Valley (Miguel A.)</td>
-                                        <td style={{ color: 'var(--descriptionColor)' }}>Quick pan-sauté, crispy chips</td>
-                                        <td>1 bunch</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong style={{ color: 'var(--primary-color)' }}>Purple & Orange Carrots</strong></td>
-                                        <td style={{ color: 'var(--pcolor)' }}>Skagit Valley (Sarah K.)</td>
-                                        <td style={{ color: 'var(--descriptionColor)' }}>Charred with honey glaze</td>
-                                        <td>500g</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong style={{ color: 'var(--primary-color)' }}>Fresh Thyme & Rosemary</strong></td>
-                                        <td style={{ color: 'var(--pcolor)' }}>Alder Hollow Farm</td>
-                                        <td style={{ color: 'var(--descriptionColor)' }}>Herb butter, roasting seasoning</td>
-                                        <td>2 bundles</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong style={{ color: 'var(--primary-color)' }}>Baby Zucchini & Squash</strong></td>
-                                        <td style={{ color: 'var(--pcolor)' }}>Two Rivers Farm</td>
-                                        <td style={{ color: 'var(--descriptionColor)' }}>Wood-fired grill, pasta toss</td>
-                                        <td>400g</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div className="basic-table-wrap">
+                                <table className="basic-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Produce Item</th>
+                                            <th>Origin Farm</th>
+                                            <th>Best Used For</th>
+                                            <th>Portion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong style={{ color: 'var(--primary-color)' }}>Roma & Sun Gold Tomatoes</strong></td>
+                                            <td style={{ color: 'var(--pcolor)' }}>Sonoma County (Dana R.)</td>
+                                            <td style={{ color: 'var(--descriptionColor)' }}>Slow-roasted sauces, fresh salads</td>
+                                            <td>650g</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style={{ color: 'var(--primary-color)' }}>Tuscan Lacinato Kale</strong></td>
+                                            <td style={{ color: 'var(--pcolor)' }}>Willamette Valley (Miguel A.)</td>
+                                            <td style={{ color: 'var(--descriptionColor)' }}>Quick pan-sauté, crispy chips</td>
+                                            <td>1 bunch</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style={{ color: 'var(--primary-color)' }}>Purple & Orange Carrots</strong></td>
+                                            <td style={{ color: 'var(--pcolor)' }}>Skagit Valley (Sarah K.)</td>
+                                            <td style={{ color: 'var(--descriptionColor)' }}>Charred with honey glaze</td>
+                                            <td>500g</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style={{ color: 'var(--primary-color)' }}>Fresh Thyme & Rosemary</strong></td>
+                                            <td style={{ color: 'var(--pcolor)' }}>Alder Hollow Farm</td>
+                                            <td style={{ color: 'var(--descriptionColor)' }}>Herb butter, roasting seasoning</td>
+                                            <td>2 bundles</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style={{ color: 'var(--primary-color)' }}>Baby Zucchini & Squash</strong></td>
+                                            <td style={{ color: 'var(--pcolor)' }}>Two Rivers Farm</td>
+                                            <td style={{ color: 'var(--descriptionColor)' }}>Wood-fired grill, pasta toss</td>
+                                            <td>400g</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
                             <div style={{ marginTop: '2rem', display: 'flex', gap: '1.25rem', alignItems: 'center', flexWrap: 'wrap' }}>
                                 <Link href="/cart" className="basic-btn" style={{ fontSize: '1.05rem', padding: '0.85rem 2rem' }}>

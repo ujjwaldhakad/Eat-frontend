@@ -444,11 +444,11 @@ const Page = () => {
 
 
                     <div className={`nav-links ${menuOpen ? "show" : ""}`}>
-                        <Link href="/restaurant#specialties" className='nav-item'>Specialties</Link>
-                        <Link href="/restaurant/menu" className='nav-item'>Menu</Link>
-                        <Link href="/restaurant/story" className='nav-item'>Our Story</Link>
-                        <Link href="/restaurant/visit" className='nav-item'>Visit Us</Link>
-                        <button onClick={() => setOpenBox(true)} className='rest-btn'>Book a Table</button>
+                        <Link href="/restaurant#specialties" className='nav-item' onClick={() => setMenuOpen(false)}>Specialties</Link>
+                        <Link href="/restaurant/menu" className='nav-item' onClick={() => setMenuOpen(false)}>Menu</Link>
+                        <Link href="/restaurant/story" className='nav-item' onClick={() => setMenuOpen(false)}>Our Story</Link>
+                        <Link href="/restaurant/visit" className='nav-item' onClick={() => setMenuOpen(false)}>Visit Us</Link>
+                        <button onClick={() => { setMenuOpen(false); setOpenBox(true); }} className='rest-btn'>Book a Table</button>
                     </div>
                 </nav>
 

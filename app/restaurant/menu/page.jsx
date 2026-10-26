@@ -538,11 +538,11 @@ const MenuPage = () => {
                     </button>
 
                     <div className={`nav-links ${menuOpen ? "show" : ""}`}>
-                        <Link href="/restaurant#specialties" className='nav-item'>Specialties</Link>
-                        <Link href="/restaurant/menu" className='nav-item' style={{ color: 'var(--pcolor)' }}>Menu</Link>
-                        <Link href="/restaurant/story" className='nav-item'>Our Story</Link>
-                        <Link href="/restaurant/visit" className='nav-item'>Visit Us</Link>
-                        <button onClick={() => setOpenBox(true)} className='rest-btn'>Book a Table</button>
+                        <Link href="/restaurant#specialties" className='nav-item' onClick={() => setMenuOpen(false)}>Specialties</Link>
+                        <Link href="/restaurant/menu" className='nav-item' style={{ color: 'var(--pcolor)' }} onClick={() => setMenuOpen(false)}>Menu</Link>
+                        <Link href="/restaurant/story" className='nav-item' onClick={() => setMenuOpen(false)}>Our Story</Link>
+                        <Link href="/restaurant/visit" className='nav-item' onClick={() => setMenuOpen(false)}>Visit Us</Link>
+                        <button onClick={() => { setMenuOpen(false); setOpenBox(true); }} className='rest-btn'>Book a Table</button>
                     </div>
                 </nav>
 
@@ -564,7 +564,7 @@ const MenuPage = () => {
             </div>
 
             {/* Menu Controls: Search & Category Navigation */}
-            <div id="menu-catalog" style={{ backgroundColor: 'var(--bgcolor)', borderTop: '1px solid var(--borderColor)', borderBottom: '1px solid var(--borderColor)', padding: '2rem 3rem' }}>
+            <div id="menu-catalog" className="menu-catalog-bar">
                 <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
                     {/* Search Bar */}
                     <div style={{ flex: '1', minWidth: '280px', maxWidth: '450px' }}>
@@ -643,7 +643,7 @@ const MenuPage = () => {
             </div>
 
             {/* Menu Items Grid */}
-            <div style={{ maxWidth: '1240px', margin: '0 auto', padding: '3.5rem 1.5rem' }}>
+            <div className="menu-items-container">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem', borderBottom: '1px solid var(--borderColor)', paddingBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
                     <div>
                         <span style={{ color: 'var(--pcolor)', fontSize: '0.9rem', fontWeight: 800, letterSpacing: '1px' }}>
@@ -699,7 +699,7 @@ const MenuPage = () => {
                         </button>
                     </div>
                 ) : (
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '2rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
                         {filteredDishes.map(dish => {
                             const isSelected = selectedDishes.some(d => d.id === dish.id);
                             return (

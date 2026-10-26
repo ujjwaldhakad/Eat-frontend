@@ -55,33 +55,35 @@ const VisitPage = () => {
                     <div className="basic-card">
                         <h2 className="basic-card-title">Kitchen Hours</h2>
 
-                        <table className="basic-table" style={{ marginTop: '0.75rem' }}>
-                            <thead>
-                                <tr>
-                                    <th>Day</th>
-                                    <th>Lunch Service</th>
-                                    <th>Dinner Service</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong style={{ color: 'var(--primary-color)' }}>Tuesday – Friday</strong></td>
-                                    <td>12:30 PM – 3:30 PM</td>
-                                    <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>7:00 PM – 11:00 PM</td>
-                                </tr>
-                                <tr>
-                                    <td><strong style={{ color: 'var(--primary-color)' }}>Saturday & Sunday</strong></td>
-                                    <td>12:00 PM – 4:00 PM</td>
-                                    <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>6:30 PM – 11:30 PM</td>
-                                </tr>
-                                <tr>
-                                    <td><strong style={{ color: 'var(--primary-color)' }}>Monday</strong></td>
-                                    <td colSpan="2" style={{ color: 'var(--hightColor)', fontWeight: 600 }}>
-                                        Closed for Farm Harvesting & Maintenance
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div className="basic-table-wrap">
+                            <table className="basic-table" style={{ marginTop: '0.75rem' }}>
+                                <thead>
+                                    <tr>
+                                        <th>Day</th>
+                                        <th>Lunch Service</th>
+                                        <th>Dinner Service</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong style={{ color: 'var(--primary-color)' }}>Tuesday – Friday</strong></td>
+                                        <td>12:30 PM – 3:30 PM</td>
+                                        <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>7:00 PM – 11:00 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style={{ color: 'var(--primary-color)' }}>Saturday & Sunday</strong></td>
+                                        <td>12:00 PM – 4:00 PM</td>
+                                        <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>6:30 PM – 11:30 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong style={{ color: 'var(--primary-color)' }}>Monday</strong></td>
+                                        <td colSpan="2" style={{ color: 'var(--hightColor)', fontWeight: 600 }}>
+                                            Closed for Farm Harvesting & Maintenance
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
                         <div style={{ marginTop: '2rem' }}>
                             <Link href="/restaurant" className="basic-btn" style={{ width: '100%', textAlign: 'center', padding: '0.85rem' }}>

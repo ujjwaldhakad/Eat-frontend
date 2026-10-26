@@ -110,40 +110,42 @@ const SubscriptionPage = () => {
                 {/* Billing History */}
                 <div className="basic-card">
                     <h2 className="basic-card-title">Past Billing Receipts</h2>
-                    <table className="basic-table">
-                        <thead>
-                            <tr>
-                                <th>Invoice Date</th>
-                                <th>Description</th>
-                                <th>Amount</th>
-                                <th>Status</th>
-                                <th>Receipt</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2026-10-18</td>
-                                <td>The Table Box — Weekly Harvest Renewal</td>
-                                <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>₹58.00</td>
-                                <td><span className="basic-badge basic-badge-success">Paid</span></td>
-                                <td><a href="#" style={{ color: 'var(--pcolor)' }}>Download PDF</a></td>
-                            </tr>
-                            <tr>
-                                <td>2026-10-11</td>
-                                <td>The Table Box — Weekly Harvest Renewal</td>
-                                <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>₹58.00</td>
-                                <td><span className="basic-badge basic-badge-success">Paid</span></td>
-                                <td><a href="#" style={{ color: 'var(--pcolor)' }}>Download PDF</a></td>
-                            </tr>
-                            <tr>
-                                <td>2026-10-04</td>
-                                <td>The Solo Box — Initial Trial</td>
-                                <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>₹34.00</td>
-                                <td><span className="basic-badge basic-badge-success">Paid</span></td>
-                                <td><a href="#" style={{ color: 'var(--pcolor)' }}>Download PDF</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="basic-table-wrap">
+                        <table className="basic-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice Date</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Receipt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2026-10-18</td>
+                                    <td>The Table Box — Weekly Harvest Renewal</td>
+                                    <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>₹58.00</td>
+                                    <td><span className="basic-badge basic-badge-success">Paid</span></td>
+                                    <td><a href="#" style={{ color: 'var(--pcolor)' }}>Download PDF</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2026-10-11</td>
+                                    <td>The Table Box — Weekly Harvest Renewal</td>
+                                    <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>₹58.00</td>
+                                    <td><span className="basic-badge basic-badge-success">Paid</span></td>
+                                    <td><a href="#" style={{ color: 'var(--pcolor)' }}>Download PDF</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2026-10-04</td>
+                                    <td>The Solo Box — Initial Trial</td>
+                                    <td style={{ color: 'var(--pcolor)', fontWeight: 'bold' }}>₹34.00</td>
+                                    <td><span className="basic-badge basic-badge-success">Paid</span></td>
+                                    <td><a href="#" style={{ color: 'var(--pcolor)' }}>Download PDF</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </main>
 
